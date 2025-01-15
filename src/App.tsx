@@ -1,5 +1,7 @@
-import React from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Code2, Boxes, User2, Send } from 'lucide-react';
+// import React from 'react';
+import { Github, Linkedin, Mail, Code2, Boxes, User2, Send } from 'lucide-react';
+import { Header } from './components';
+import { useState } from 'react';
 
 function App() {
   const projects = [
@@ -28,15 +30,22 @@ function App() {
     "Node.js", "Git", "REST APIs", "Redux", "Next.js", "Responsive Design"
   ];
 
+  const [toggle, setToggle] = useState<boolean>(false);
+
+  const handleToggleTheme = () => {
+    setToggle((prev) => !prev);
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className={`min-h-screen ${toggle ? 'bg-gray-50' : 'bg-gray-900' }`}>
+      <Header toggle={toggle} handleToggleTheme={handleToggleTheme} />
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50 p-8">
+      <section className={`min-h-screen flex items-center justify-center ${toggle ? 'bg-gradient-to-br from-blue-50 to-indigo-50' : 'bg-gray-900 text-white'} p-8`}>
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className={`text-5xl md:text-6xl font-bold ${toggle ? 'text-gray-900' : 'text-white'} mb-6`}>
             Amit Thakur
           </h1>
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h1 className={`text-3xl md:text-4xl font-bold ${toggle ? 'text-gray-900' : 'text-white'} mb-6`}>
             Frontend Developer
           </h1>
           <p className="text-xl text-gray-600 mb-8">
@@ -65,7 +74,7 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className={`py-20 ${toggle ? 'bg-white' : 'bg-zinc-900 text-white shadow-xl shadow-white'}`}>
         <div className="max-w-4xl mx-auto px-8">
           <div className="flex items-center gap-2 mb-8">
             <User2 className="text-indigo-600" />
@@ -80,7 +89,7 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gray-50">
+      <section id="skills" className={`py-20 ${toggle ? 'bg-gray-50' : 'bg-zinc-900 text-white shadow-xl shadow-white' }`}>
         <div className="max-w-4xl mx-auto px-8">
           <div className="flex items-center gap-2 mb-8">
             <Code2 className="text-indigo-600" />
@@ -88,8 +97,8 @@ function App() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {skills.map((skill, index) => (
-              <div key={index} className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <p className="text-gray-800 font-medium text-center">{skill}</p>
+              <div key={index} className={`${toggle ? 'bg-white text-gray-800' : 'bg-gray-900 text-white shadow-slate-100'} p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow`}>
+                <p className="font-medium text-center">{skill}</p>
               </div>
             ))}
           </div>
@@ -97,7 +106,7 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-white">
+      <section id="projects" className={`py-20 ${toggle ? 'bg-white' : 'bg-zinc-900 text-white shadow-xl shadow-white'}`}>
         <div className="max-w-4xl mx-auto px-8">
           <div className="flex items-center gap-2 mb-8">
             <Boxes className="text-indigo-600" />
@@ -105,7 +114,7 @@ function App() {
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <div key={index} className="rounded-lg overflow-hidden shadow-lg shadow-slate-500 hover:shadow-xl transition-shadow">
                 <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
@@ -128,7 +137,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50">
+      <section id="contact" className={`py-20 ${toggle ? 'bg-gray-50' : 'bg-zinc-900 text-white shadow-xl shadow-white'}`}>
         <div className="max-w-4xl mx-auto px-8">
           <div className="flex items-center gap-2 mb-8">
             <Send className="text-indigo-600" />
@@ -173,7 +182,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white py-8">
+      <footer className={`${toggle ? 'bg-white' : 'bg-zinc-900 text-white shadow-xl shadow-white'} py-8`}>
         <div className="max-w-4xl mx-auto px-8 text-center text-gray-600">
           <p>© {new Date().getFullYear()} Amit Thakur. All rights reserved.</p>
         </div>
