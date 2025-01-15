@@ -4,23 +4,23 @@ import { Github, Linkedin, Mail, ExternalLink, Code2, Boxes, User2, Send } from 
 function App() {
   const projects = [
     {
-      title: "E-commerce Dashboard",
-      description: "A comprehensive dashboard for managing online stores with real-time analytics and inventory management.",
+      title: "ProLegion Marketplace UI",
+      description: "A comprehensive marketplace UI for managing jobs with real-time analytics and job hiring management.",
       tech: ["React", "TypeScript", "Tailwind CSS", "Redux"],
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426"
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management platform with real-time updates and team collaboration features.",
-      tech: ["React", "Node.js", "MongoDB", "WebSocket"],
+      title: "My Portfolio",
+      description: "A platform with my skills and work updates and team collaboration.",
+      tech: ["React", "Node.js", "Tailwind CSS"],
       image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=2426"
     },
-    {
-      title: "Weather Dashboard",
-      description: "A beautiful weather application with detailed forecasts and interactive maps.",
-      tech: ["React", "REST APIs", "Chart.js", "Geolocation"],
-      image: "https://images.unsplash.com/photo-1601134467661-3d775b999c8b?auto=format&fit=crop&q=80&w=2575"
-    }
+    // {
+    //   title: "Weather Dashboard",
+    //   description: "A beautiful weather application with detailed forecasts and interactive maps.",
+    //   tech: ["React", "REST APIs", "Chart.js", "Geolocation"],
+    //   image: "https://images.unsplash.com/photo-1601134467661-3d775b999c8b?auto=format&fit=crop&q=80&w=2575"
+    // }
   ];
 
   const skills = [
@@ -51,13 +51,13 @@ function App() {
             </a>
           </div>
           <div className="flex justify-center gap-6 mt-12">
-            <a href="https://github.com" className="text-gray-600 hover:text-indigo-600 transition-colors">
+            <a href="https://github.com/Thakuramit4168" className="text-gray-600 hover:text-indigo-600 transition-colors">
               <Github size={24} />
             </a>
-            <a href="https://linkedin.com" className="text-gray-600 hover:text-indigo-600 transition-colors">
+            <a href="https://www.linkedin.com/in/amit-thakurhp21/" className="text-gray-600 hover:text-indigo-600 transition-colors">
               <Linkedin size={24} />
             </a>
-            <a href="mailto:your.email@example.com" className="text-gray-600 hover:text-indigo-600 transition-colors">
+            <a href="mailto:thakuramit4168@gmail.com" className="text-gray-600 hover:text-indigo-600 transition-colors">
               <Mail size={24} />
             </a>
           </div>
@@ -117,9 +117,9 @@ function App() {
                       </span>
                     ))}
                   </div>
-                  <a href="#" className="inline-flex items-center gap-2 mt-4 text-indigo-600 hover:text-indigo-700">
+                  {/* <a href="#" className="inline-flex items-center gap-2 mt-4 text-indigo-600 hover:text-indigo-700">
                     View Project <ExternalLink size={16} />
-                  </a>
+                  </a> */}
                 </div>
               </div>
             ))}
@@ -140,7 +140,7 @@ function App() {
               <input
                 type="text"
                 id="name"
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                className="mt-1 p-4 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                 placeholder="Your name"
               />
             </div>
@@ -149,7 +149,7 @@ function App() {
               <input
                 type="email"
                 id="email"
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                className="mt-1 p-4 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -158,7 +158,7 @@ function App() {
               <textarea
                 id="message"
                 rows={4}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                className="mt-1 p-4 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                 placeholder="Your message"
               />
             </div>
@@ -176,6 +176,9 @@ function App() {
       <footer className="bg-white py-8">
         <div className="max-w-4xl mx-auto px-8 text-center text-gray-600">
           <p>© {new Date().getFullYear()} Amit Thakur. All rights reserved.</p>
+        </div>
+        <div className="flex justify-end p-4 text-xs">
+          <a href="https://www.linkedin.com/company/devpeakinnovations/">Powered by DevPeak Innovations</a>
         </div>
       </footer>
     </div>
